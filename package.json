@@ -57,6 +57,7 @@
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.17",
     "rimraf": "^2.4.2",
+    "rollup-babel": "^0.6.1",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1",
     "webpack-stream": "^2.1.0"
