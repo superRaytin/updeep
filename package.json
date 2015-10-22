@@ -21,7 +21,7 @@
   "scripts": {
     "test": "gulp",
     "test:watch": "gulp watch",
-    "prepublish": "rm -rf dist; mkdir -p dist/umd && rollupbabel -f umd -n updeep lib/index.js | sed 's/process.env.NODE_ENV/\"production\"/g' > dist/umd/updeep-standalone.js && uglifyjs --mangle --compress warnings=false --screw-ie8 -- dist/umd/updeep-standalone.js > dist/umd/updeep-standalone.min.js && rollupbabel -f cjs lib/index.js -o dist/index.js",
+    "prepublish": "rm -rf dist; mkdir -p dist/umd && rollupbabel -f umd -n updeep lib/index.js | sed 's/process.env.NODE_ENV/\"production\"/g' > dist/umd/updeep-standalone.js && uglifyjs --mangle --compress warnings=false --screw-ie8 -- dist/umd/updeep-standalone.js > dist/umd/updeep-standalone.min.js && rollupbabel -e lodash-es -f cjs lib/index.js | sed 's/lodash-es/lodash/g' > dist/index.js",
     "perf-server": "`npm bin`/webpack-dev-server --config perf/webpack.config.js --hot"
   },
   "license": "MIT",
