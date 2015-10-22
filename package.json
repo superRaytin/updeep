@@ -21,7 +21,7 @@
   "scripts": {
     "test": "gulp",
     "test:watch": "gulp watch",
-    "prepublish": "gulp prepublish",
+    "prepublish": "rm -rf dist; mkdir -p dist/umd && rollupbabel -f umd -n updeep lib/index.js | sed 's/process.env.NODE_ENV/\"production\"/g' > dist/umd/updeep-standalone.js && uglifyjs --mangle --compress warnings=false --screw-ie8 -- dist/umd/updeep-standalone.js > dist/umd/updeep-standalone.min.js && rollupbabel -f cjs lib/index.js -o dist/index.js",
     "perf-server": "`npm bin`/webpack-dev-server --config perf/webpack.config.js --hot"
   },
   "license": "MIT",
@@ -59,6 +59,7 @@
     "phantomjs": "^1.9.17",
     "rimraf": "^2.4.2",
     "rollup-babel": "^0.6.1",
+    "uglify-js": "^2.5.0",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1",
     "webpack-stream": "^2.1.0"
