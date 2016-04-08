@@ -1,7 +1,7 @@
 {
-  "name": "updeep",
+  "name": "updeep-mutable",
   "version": "0.14.0",
-  "description": "Easily update nested frozen objects and arrays in a declarative and immutable manner.",
+  "description": "A fork of updeep, easily update nested objects and arrays in a declarative and mutable manner.",
   "homepage": "https://github.com/aaronjensen/updeep",
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   "main": "dist/index.js",
   "keywords": [
     "immutable",
+    "mutable",
     "frozen",
     "functional",
     "declarative"
